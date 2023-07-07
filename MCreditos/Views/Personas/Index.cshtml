@@ -1,0 +1,88 @@
+﻿@model IEnumerable<MCreditos.Models.Persona>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Clientes</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApellidoPaterno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApellidoMaterno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CantidadPrestada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefono)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaPrestamo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiaCobro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MesesPrestamo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Intereses)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                    <a href="/Pagoes">@Html.DisplayFor(modelItem => item.Nombre)</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApellidoPaterno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApellidoMaterno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CantidadPrestada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaPrestamo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiaCobro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MesesPrestamo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Intereses)
+            </td>
+            <td>
+                <a asp-action="Edit" class="btn btn-warning" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" class="btn btn-primary" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
